@@ -189,6 +189,56 @@ body {
   font-family: 'IBM Plex Mono', monospace;
 }
 
+.js .js-tabcontent section {
+  display: none;
+}
+
+.js .js-tabcontent section.active {
+  display: block !important;
+  transition: show 0.5s forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.js .js-accordion dd {
+  display: none;
+}
+
+.js-accordion dt::after {
+  content: '↴';
+  margin-left: 10px;
+}
+
+.js-accordion dt.active::after {
+  content: '⬏';
+  margin-left: 10px;
+}
+
+.js-accordion dd.active {
+  display: block;
+  animation: slideDonw 0.5s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    max-height: 200px;
+    opacity: 1;
+  }
+}
+
 @media (max-wdith: 700px) {
   body {
     grid-template-columns: 1fr;

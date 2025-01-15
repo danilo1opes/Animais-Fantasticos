@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      document.documentElement.className += ' js';
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,27 +21,27 @@
     </nav>
     <section class="grid-section animais" id="animais">
       <h1 class="titulo">Animais Fantásticos</h1>
-      <ul class="animais-listas">
+      <ul class="animais-listas js-tabmenu">
         <li>
-          <img src="img/wolf.jpg" />
+          <img src="img/fox.jpg" alt="raposa" />
         </li>
         <li>
-          <img src="img/bear.jpg" />
+          <img src="img/squirrel.jpg" alt="esquilo" />
         </li>
         <li>
-          <img src="img/lion.jpg" />
+          <img src="img/bear.jpg" alt="urso" />
         </li>
         <li>
-          <img src="img/monkey.jpg" />
+          <img src="img/wolf.jpg" alt="lobo" />
         </li>
         <li>
-          <img src="img/squirrel.jpg" />
+          <img src="img/monkey.jpg" alt="macaco" />
         </li>
         <li>
-          <img src="img/fox.jpg" />
+          <img src="img/lion.jpg" alt="leão" />
         </li>
       </ul>
-      <div class="animais-descricao">
+      <div class="animais-descricao js-tabcontent">
         <section>
           <h2>Raposa</h2>
           <p>
@@ -220,7 +223,7 @@
 
     <section class="grid-section faq" id="faq">
       <h1 class="titulo">FAQ</h1>
-      <dl class="faq-lista">
+      <dl class="faq-lista js-accordion">
         <dt>
           O que podemos fazer para proteger animais ameaçados de extinção?
         </dt>
