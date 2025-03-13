@@ -16,7 +16,7 @@
 @keyframes show-right {
   from {
     opacity: 0;
-    transform: translate3d(70px, 0, 0);
+    transform: translate3d(-30px, 0, 0);
   }
   to {
     opacity: 1;
