@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Layout } from './components/Layout';
 import { Modal } from './components/Modal';
 import { useState } from 'react';
+import { AnimaisFantasticos } from './components/Animais-Fantasticos/Introcution';
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -17,7 +18,9 @@ function App() {
               <Route path="/"></Route>
             </Routes>
           </main>
-          <div className="col-start-4 col-end-5"></div>
+          <div className="col-start-2 col-end-5 box-border">
+            <AnimaisFantasticos />
+          </div>
         </Layout>
       </Router>
       {/* Modal de Login */}

@@ -39,7 +39,7 @@ export function Navbar({ onLoginClick }: NavbarProps) {
   };
 
   return (
-    <header>
+    <header >
       <div className="grid items-center">
         {/* Mobile Menu Button */}
         <div className="md:hidden flex bg-[#fb5] p-4">
