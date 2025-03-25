@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Navbar } from './components/Navbar';
 import { Layout } from './components/Layout';
-import { Modal } from './components/Modal';
+import { Modal } from './pages/Modal';
 import { useState } from 'react';
 import { AnimaisFantasticos } from './components/Animais-Fantasticos/Introcution';
 function App() {
