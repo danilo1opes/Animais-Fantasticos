@@ -18,7 +18,7 @@ function App() {
               <Route path="/"></Route>
             </Routes>
           </main>
-          <div className="col-start-2 col-end-5 box-border">
+          <div className="md:col-start-2 md:col-end-5 box-border">
             <AnimaisFantasticos />
           </div>
         </Layout>

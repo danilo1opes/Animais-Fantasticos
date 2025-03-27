@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { animaisData } from '../data/animaisParagrafos';
 
 export function AnimaisFantasticos() {
-  const world = 'Animais Fantasticos';
+  const world = 'Animais Fantásticos';
 
   const [selectedAnimalIndex, setSelectedAnimalIndex] = useState(0);
 
@@ -16,9 +16,10 @@ export function AnimaisFantasticos() {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-[20px] mb-16 px-10">
-      <div className="col-span-1 md:col-span-2 mb-8">
-        <h1 className="text-[6rem]/[1.1] font-normal uppercase">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr_2fr] gap-6 px-6 md:px-10 mb-16">
+      {/* Título */}
+      <div className="col-span-1 md:col-span-2">
+        <h1 className="text-4xl mt-8 xl:text-[6rem]/[1.1]  uppercase">
           {world.split(' ').map((word, index) => (
             <span key={index}>
               {word}
@@ -28,9 +29,10 @@ export function AnimaisFantasticos() {
         </h1>
       </div>
 
+      {/* Lista de animais */}
       <div className="col-span-1">
         <ul
-          className="h-[370px] overflow-y-scroll cursor-pointer scrollbar-custom"
+          className="h-[370px] max-h-[300px] md:max-h-[370px] overflow-auto cursor-pointer border border-gray-300 rounded-lg p-2"
           onClick={(e) => {
             const li = (e.target as HTMLElement).closest('li');
             if (li) {
@@ -44,28 +46,34 @@ export function AnimaisFantasticos() {
           {animalImages.map((imageSrc, index) => (
             <li
               key={index}
-              className={`${
-                selectedAnimalIndex === index ? 'bg-gray-200' : ''
+              className={`flex items-center gap-2 p-2 transition-all rounded-lg ${
+                selectedAnimalIndex === index
+                  ? 'bg-gray-300'
+                  : 'hover:bg-gray-200'
               }`}
             >
               <img
-                className="w-sm"
+                className="w-16 h-16 object-cover rounded-lg"
                 src={imageSrc}
                 alt={`Animal ${index + 1}`}
               />
+              <span className="text-lg font-semibold capitalize">
+                {animaisData[index].nome}
+              </span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="col-span-1">
-        <section>
-          <h2 className="text-2xl mb-2 before-h2">
+      {/* Descrição do animal */}
+      <div className="col-span-1 md:col-span-2 xl:col-span-1">
+        <section className="bg-gray-100 p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-bold mb-3 border-b pb-2">
             {animaisData[selectedAnimalIndex].nome}
           </h2>
           {animaisData[selectedAnimalIndex].descricao.map(
             (paragrafo, index) => (
-              <p key={index} className={`text-sm ${index > 0 ? 'mb-4' : ''}`}>
+              <p key={index} className="text-base leading-relaxed mb-3">
                 {paragrafo}
               </p>
             )
